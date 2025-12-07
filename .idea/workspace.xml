@@ -4,22 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c97ff838-eb0c-49fe-9bc8-b0c0e3eccb0b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/credit-card-defaulter-risk_prediction.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/UCI_Credit_Card.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api_service.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app_frontend.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/prepare_data.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/score_and_alert.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/train_model.py" afterDir="false" />
-    </list>
+    <list default="true" id="c97ff838-eb0c-49fe-9bc8-b0c0e3eccb0b" name="Changes" comment="local part only" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -35,6 +20,18 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "subh-might-code"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/subh-might-code/credit-card-defaulter-risk_prediction.git",
+    "accountId": "e78d049a-cfce-4a2c-b99c-9579e3dee884"
+  }
+}]]></component>
   <component name="ProjectColorInfo"><![CDATA[{
   "associatedIndex": 4
 }]]></component>
@@ -78,6 +75,19 @@
       <option name="presentableId" value="Default" />
       <updated>1765140499466</updated>
     </task>
+    <task id="LOCAL-00001" summary="local part only">
+      <option name="closed" value="true" />
+      <created>1765144589898</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1765144589898</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="local part only" />
+    <option name="LAST_COMMIT_MESSAGE" value="local part only" />
   </component>
 </project>

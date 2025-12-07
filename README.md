@@ -1,5 +1,118 @@
-💳 Credit Card Delinquency Early Warning System (Full-Stack MVP)🎯 Project OverviewThis project implements a real-time machine learning service designed to predict the probability of credit card delinquency using a minimal set of powerful behavioral and financial features. It is built as a Full-Stack Minimum Viable Product (MVP) with a decoupled architecture.The project demonstrates a seamless transition from a simple classification model to a deployed API service with an interactive web frontend.🚀 ArchitectureThe system follows a three-tier architecture, allowing the model logic to be independent of the user interface.Backend API (FastAPI): Hosts the trained Logistic Regression model and serves predictions via an HTTP endpoint.Frontend App (Streamlit): Provides the interactive web interface, allowing users to input features and receive real-time risk scores.Model/Data Persistence: Uses joblib for model storage and CSV files for demonstration data.⚙️ How to Run the Project (Local Deployment)This project requires two separate terminals to run simultaneously.PrerequisitesEnsure you have Python and Docker Desktop installed and running.Install dependencies using the generated file:Bashpip install -r requirements.txt
-Step 1: Start the Backend API (Terminal 1)The FastAPI server hosts the prediction model. It must be running continuously.Open Terminal 1.Run the API server:Bashuvicorn api_service:app --reload
-Expected Output: The server will start, reporting success at http://127.0.0.1:8000. Keep this terminal open.Step 2: Start the Frontend App (Terminal 2)The Streamlit app will automatically connect to the running FastAPI server.Open a new, separate terminal (Terminal 2).Run the Streamlit application:Bashstreamlit run app_frontend.py
-Expected Outcome: A new browser window will open, displaying the interactive prediction interface (usually at http://localhost:8501).Alternative: Run with Docker Compose (Recommended for Production)For containerized deployment, run the following command in your terminal to build and start both services simultaneously:Bashdocker compose up --build -d
-The application will be accessible at http://localhost:8501.📁 Project File StructureFile/FolderDescriptionapi_service.pyBackend: FastAPI server that loads the model and exposes the /predict endpoint.app_frontend.pyFrontend: Streamlit web application that captures user input and calls the FastAPI API.requirements.txtLists all necessary Python dependencies (for both services).delinquency_model.joblibThe serialized Logistic Regression model (the brain of the service).training_data.csvThe cleaned dataset used for training the model.✨ Core Features & ModelingFeatures UsedThe MVP model was intentionally kept simple, relying on three highly predictive features derived from the historical data:Current_Utilization_Rate: (Most Recent Bill Amount / Credit Limit)Minimum_Payment_Flag: Proxy for high financial stress (1 if minimum payment used/late, 0 otherwise).Days_Since_Last_Payment_Proxy: The most recent numeric repayment status code (PAY_0).Model PerformanceModel Type: Logistic RegressionEvaluation Metric: Area Under the ROC Curve (AUC)Result: AUC $\approx 0.7097$ on the test set.💡 Potential EnhancementsTo move this MVP to an enterprise-ready system, consider these next steps:Model Upgrade: Replace Logistic Regression with XGBoost to boost the AUC score above $0.80$.Advanced Features: Implement velocity features (e.g., % change in payment amount over 3 months) to capture earlier risk signals.Security: Implement basic API key authentication for the /predict endpoint.
+# Credit Card Delinquency Early Warning System (Full-Stack MVP)
+
+## Problem statement:
+Early risk signals: credit card deliquency watch
+
+## Project Overview
+This project implements a **real-time machine learning service** that predicts the probability of **credit card delinquency**.  
+It is built as a **Full-Stack Minimum Viable Product (MVP)** with a clean, decoupled architecture.
+
+The solution demonstrates how to take a **Logistic Regression model** and deploy it as a robust API service with an **interactive web frontend**.
+
+---
+
+## System Architecture
+
+The system follows a **three-tier architecture**:
+
+### **1. Backend API (FastAPI)**
+- Hosts the trained Logistic Regression model.
+- Exposes a `/predict` HTTP endpoint.
+- Loads model from `.joblib` storage.
+
+### **2. Frontend App (Streamlit)**
+- Interactive UI for entering user inputs.
+- Sends requests to FastAPI server.
+- Displays final delinquency risk score.
+
+### **3. Data Persistence**
+- `joblib` is used for model serialization.
+- Dependencies managed via `requirements.txt`.
+
+---
+
+## Local Deployment Guide
+
+This application requires **two terminals** running simultaneously.
+
+### **Prerequisites**
+- Python installed
+- Docker Desktop (optional for containerized execution)
+
+Install required dependencies:
+```bash
+pip install -r requirements.txt
+```
+
+### Step 1: Start the Backend API (Terminal 1)
+
+The FastAPI server must be running to serve predictions.
+
+Run:
+```bash
+uvicorn api_service:app --reload
+```
+
+Expected:
+Server starts at → http://127.0.0.1:8000
+
+### Step 2: Start the Frontend App (Terminal 2)
+
+Run the Streamlit app:
+
+```bash
+streamlit run app_frontend.py
+```
+
+Expected:
+Browser opens Streamlit UI → http://localhost:8501
+
+## Project Structure
+api_service.py - FastAPI backend to load model, expose /predict
+
+app_frontend.py -	Streamlit frontend for web interaction
+
+requirements.txt -	Python dependencies
+
+delinquency_model.joblib -	Serialized Logistic Regression model
+
+
+## Core ML Features & Modeling
+Features Used
+
+1) Current_Utilization_Rate
+(Most Recent Bill Amount / Credit Limit)
+
+2) Minimum_Payment_Flag
+(Indicator of financial stress)
+
+3) Days_Since_Last_Payment_Proxy
+(Latest numeric repayment status code)
+
+## Model Performance
+
+Model: Logistic Regression
+
+Metric: AUC (Area Under ROC Curve)
+
+Score: ≈ 0.7097 on test data
+
+## Future Enhancements
+
+To make this system enterprise-ready:
+
+1) Model Improvements
+
+Switch to XGBoost for higher accuracy.
+
+2) Feature Engineering
+
+Add velocity features (rate-of-change patterns).
+
+3) Security
+
+Add API Key authentication to FastAPI routes.
+
+## Summary
+
+This MVP provides a clean, scalable, and production-style design for real-time credit risk prediction - combining FastAPI, Streamlit, and a machine learning model into a cohesive full-stack workflow.

@@ -2,7 +2,7 @@
 
 ## Project Overview
 
-**Live Demo:** [Delinquency Risk Predictor on Streamlit Cloud](https://[YOUR_APP_URL].streamlit.app)
+**Live Demo:** https://credit-card-defaulter-riskprediction-gsudhvadgmcyyle3inbswp.streamlit.app/
 
 This project implements a **Real-Time Credit Delinquency Risk Predictor** as a Minimum Viable Product (MVP). The primary goal was to deploy a trained Logistic Regression model into a single, publicly accessible web application.
 

@@ -41,7 +41,7 @@ with st.form("risk_prediction_form"):
     # F2: Minimum Payment Flag
     min_payment = st.radio(
         "Did the customer use minimum payment or pay late recently?",
-        options=[1, 0], format_func=lambda x: "Yes" if x == 1 else "No"
+        options=[0, 1], format_func=lambda x: "Yes" if x == 1 else "No"
     )
 
     # F3: Days Since Last Payment Proxy

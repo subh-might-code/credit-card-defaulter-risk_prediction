@@ -10,7 +10,7 @@ try:
     model = joblib.load(MODEL_PATH)
 
 
-    # Cache the model loading for performance (Streamlit best practice)
+    # Cache the model loading for performance
     @st.cache_resource
     def get_model():
         return joblib.load(MODEL_PATH)
@@ -26,7 +26,7 @@ st.set_page_config(page_title="Credit Risk Predictor (Cloud)", layout="centered"
 
 # --- 2. Application Layout ---
 st.title("💳 Real-Time Credit Delinquency Risk Predictor")
-st.markdown("This application provides real-time predictions directly from the hosted model.")
+#st.markdown("This application provides real-time predictions directly from the hosted model.")
 
 # --- 3. User Input Form ---
 st.header("Input Customer Features")
